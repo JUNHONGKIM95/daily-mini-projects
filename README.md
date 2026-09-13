@@ -14,9 +14,15 @@
 
 | Day | 프로젝트 | 해결하는 불편 | 상태 |
 | --- | --- | --- | --- |
-| 001 | [오늘 하나](./day-001-one-thing) | 해야 할 일이 많아 정작 중요한 한 가지를 놓침 | ✅ 완료 |
+| 001 | [오늘 하나](./day-001-one-thing) · [실행하기](https://junhongkim95.github.io/daily-mini-projects/day-001-one-thing/) | 해야 할 일이 많아 정작 중요한 한 가지를 놓침 | ✅ 배포 |
 
 전체 주제는 [100가지 프로젝트 아이디어](./IDEAS.md)에서 확인할 수 있습니다.
+
+배포된 프로젝트 모음: <https://junhongkim95.github.io/daily-mini-projects/>
+
+## 배포 규칙
+
+`main` 브랜치에 반영된 정적 파일은 GitHub Pages로 자동 배포됩니다. 각 프로젝트는 `day-NNN-project-name/` 폴더에 추가하며, 같은 경로의 공개 URL을 갖습니다.
 
 ## 실행
 
@@ -28,4 +34,3 @@ python -m http.server 4173
 ```
 
 브라우저에서 `http://localhost:4173`을 열면 됩니다.
-
