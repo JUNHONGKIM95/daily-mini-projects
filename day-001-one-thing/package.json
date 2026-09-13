@@ -1,0 +1,9 @@
+{
+  "name": "day-001-one-thing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/model.test.mjs"
+  }
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "오늘 하나",
+  "short_name": "오늘 하나",
+  "description": "오늘 반드시 끝낼 한 가지에 집중하는 앱",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#f4f1e8",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

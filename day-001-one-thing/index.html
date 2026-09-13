@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f1e8" />
+    <meta name="description" content="오늘 반드시 끝낼 한 가지에만 집중하세요." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>오늘 하나</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="오늘 하나 홈">하나.</a>
+        <button class="icon-button" id="installButton" type="button" hidden>앱 설치</button>
+      </header>
+
+      <section class="hero" aria-labelledby="pageTitle">
+        <p class="date" id="todayLabel"></p>
+        <h1 id="pageTitle">오늘은 이것만.</h1>
+        <p class="subtitle">욕심내지 말고, 가장 중요한 한 가지.</p>
+      </section>
+
+      <section class="task-card" id="taskCard" aria-live="polite">
+        <form id="taskForm" class="task-form">
+          <label for="taskInput">오늘 반드시 끝낼 일</label>
+          <div class="input-wrap">
+            <textarea
+              id="taskInput"
+              name="task"
+              rows="3"
+              maxlength="80"
+              placeholder="예: 미뤄둔 병원 예약하기"
+              required
+              autofocus
+            ></textarea>
+            <span class="counter" id="counter">0 / 80</span>
+          </div>
+          <button class="primary-button" type="submit">오늘의 하나 정하기</button>
+        </form>
+
+        <div class="saved-task" id="savedTask" hidden>
+          <button class="check-button" id="completeButton" type="button" aria-pressed="false">
+            <span class="checkmark" aria-hidden="true"></span>
+            <span class="task-text" id="taskText"></span>
+          </button>
+          <div class="task-actions">
+            <p class="encouragement" id="encouragement">한 가지에만 집중해요.</p>
+            <button class="text-button" id="editButton" type="button">수정</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="streak" aria-label="최근 7일 기록">
+        <div>
+          <p class="eyebrow">최근 기록</p>
+          <p class="streak-copy" id="streakCopy">오늘부터 가볍게 시작해요.</p>
+        </div>
+        <ol class="week" id="weekList"></ol>
+      </section>
+
+      <footer>
+        <p>오늘의 데이터는 이 기기에만 저장됩니다.</p>
+      </footer>
+    </main>
+
+    <noscript>이 앱을 사용하려면 JavaScript를 켜주세요.</noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
+
