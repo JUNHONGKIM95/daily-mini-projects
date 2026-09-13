@@ -31,12 +31,16 @@ public final class TodayStore {
     }
 
     public static void save(Context context, String text) {
+        save(context, text, false);
+    }
+
+    public static void save(Context context, String text, boolean completed) {
         String cleanText = text == null ? "" : text.trim().replaceAll("\\s+", " ");
         if (cleanText.length() > 80) cleanText = cleanText.substring(0, 80);
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
                 .edit()
                 .putString(TEXT_PREFIX + LocalDate.now(), cleanText)
-                .putBoolean(COMPLETED_PREFIX + LocalDate.now(), false)
+                .putBoolean(COMPLETED_PREFIX + LocalDate.now(), completed)
                 .apply();
     }
 
@@ -48,13 +52,6 @@ public final class TodayStore {
                 .putString(TEXT_PREFIX + LocalDate.now(), task.text)
                 .putBoolean(COMPLETED_PREFIX + LocalDate.now(), !task.completed)
                 .apply();
-    }
-
-    public static int stateFor(Context context, LocalDate date) {
-        SharedPreferences preferences = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
-        String key = date.toString();
-        if (preferences.getString(TEXT_PREFIX + key, "").isEmpty()) return 0;
-        return preferences.getBoolean(COMPLETED_PREFIX + key, false) ? 2 : 1;
     }
 
     public static final class Task {

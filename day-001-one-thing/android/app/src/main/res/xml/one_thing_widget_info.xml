@@ -2,6 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/widget_description"
     android:initialLayout="@layout/widget_one_thing"
+    android:initialKeyguardLayout="@layout/widget_one_thing"
     android:minWidth="110dp"
     android:minHeight="48dp"
     android:minResizeWidth="110dp"
@@ -11,5 +12,5 @@
     android:targetCellWidth="2"
     android:targetCellHeight="1"
     android:updatePeriodMillis="1800000"
-    android:widgetCategory="home_screen"
+    android:widgetCategory="home_screen|keyguard"
     android:widgetFeatures="configuration_optional" />

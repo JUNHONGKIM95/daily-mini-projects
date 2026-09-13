@@ -1,9 +1,35 @@
-import { completionCount, readDays, recentDays, saveTask, toDateKey, toggleTask } from "./model.js";
+import { STORAGE_KEY, completionCount, readDays, recentDays, saveTask, toDateKey, toggleTask } from "./model.js";
 
 const $ = (selector) => document.querySelector(selector);
 const today = new Date();
 const todayKey = toDateKey(today);
 let installPrompt = null;
+
+function notifyAndroidWidget(task) {
+  if (!task || !window.AndroidWidget?.syncTask) return;
+  window.AndroidWidget.syncTask(task.text, task.completed);
+}
+
+function syncFromAndroidWidget(shouldRender = true) {
+  if (!window.AndroidWidget?.readToday) return false;
+  try {
+    const nativeTask = JSON.parse(window.AndroidWidget.readToday());
+    if (!nativeTask.text) return false;
+    const days = readDays(localStorage);
+    days[todayKey] = {
+      text: nativeTask.text,
+      completed: Boolean(nativeTask.completed),
+      updatedAt: new Date().toISOString(),
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(days));
+    if (shouldRender) render();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+window.syncFromAndroidWidget = syncFromAndroidWidget;
 
 const elements = {
   todayLabel: $("#todayLabel"),
@@ -60,14 +86,16 @@ elements.input.addEventListener("input", () => {
 
 elements.form.addEventListener("submit", (event) => {
   event.preventDefault();
-  saveTask(localStorage, todayKey, elements.input.value);
+  const task = saveTask(localStorage, todayKey, elements.input.value);
+  notifyAndroidWidget(task);
   elements.input.value = "";
   elements.counter.textContent = "0 / 80";
   render();
 });
 
 elements.complete.addEventListener("click", () => {
-  toggleTask(localStorage, todayKey);
+  const task = toggleTask(localStorage, todayKey);
+  notifyAndroidWidget(task);
   render();
 });
 
@@ -93,9 +121,11 @@ elements.install.addEventListener("click", async () => {
   elements.install.hidden = true;
 });
 
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && !window.AndroidWidget) {
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
 }
 
+if (!syncFromAndroidWidget(false)) {
+  notifyAndroidWidget(readDays(localStorage)[todayKey]);
+}
 render();
-

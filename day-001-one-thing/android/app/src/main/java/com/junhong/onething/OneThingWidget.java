@@ -24,6 +24,8 @@ public class OneThingWidget extends AppWidgetProvider {
         if (ACTION_TOGGLE.equals(intent.getAction())) {
             TodayStore.toggle(context);
             updateAll(context);
+        } else if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(intent.getAction())) {
+            updateAll(context);
         }
     }
 
@@ -38,6 +40,9 @@ public class OneThingWidget extends AppWidgetProvider {
         TodayStore.Task task = TodayStore.read(context);
         boolean hasTask = !task.text.isEmpty();
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_one_thing);
+        views.setInt(R.id.widget_root, "setBackgroundResource", task.completed
+                ? R.drawable.widget_background
+                : R.drawable.widget_background_pending);
 
         views.setTextViewText(R.id.widget_task, hasTask ? task.text : context.getString(R.string.widget_empty));
         views.setTextViewText(R.id.widget_toggle, task.completed ? "✓" : "○");
