@@ -13,7 +13,7 @@ import android.text.style.StrikethroughSpan;
 import android.widget.RemoteViews;
 
 public class OneThingWidget extends AppWidgetProvider {
-    private static final String ACTION_TOGGLE = "com.junhong.onething.TOGGLE_TASK";
+    static final String ACTION_TOGGLE = "com.junhong.onething.TOGGLE_TASK";
     private static final int COMPACT_MAX_WIDTH_DP = 100;
 
     @Override
@@ -34,8 +34,14 @@ public class OneThingWidget extends AppWidgetProvider {
         if (ACTION_TOGGLE.equals(intent.getAction())) {
             TodayStore.toggle(context);
             updateAll(context);
+            TodayNotification.sync(context);
         } else if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(intent.getAction())) {
             updateAll(context);
+            TodayNotification.sync(context);
+        } else if (Intent.ACTION_DATE_CHANGED.equals(intent.getAction())
+                || Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())) {
+            updateAll(context);
+            TodayNotification.sync(context);
         }
     }
 

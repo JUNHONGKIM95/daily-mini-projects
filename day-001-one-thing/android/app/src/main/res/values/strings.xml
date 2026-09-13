@@ -26,4 +26,8 @@
     <string name="recent_label">최근 기록</string>
     <string name="recent_empty">오늘부터 가볍게 시작해요.</string>
     <string name="recent_count">최근 7일 동안 %1$d개의 중요한 일을 끝냈어요.</string>
+    <string name="notification_channel_name">오늘의 하나</string>
+    <string name="notification_channel_description">완료하지 않은 오늘의 할 일을 계속 표시합니다.</string>
+    <string name="notification_title">오늘은 이것만.</string>
+    <string name="notification_complete">완료</string>
 </resources>
