@@ -41,9 +41,6 @@ public class OneThingWidget extends AppWidgetProvider {
 
         views.setTextViewText(R.id.widget_task, hasTask ? task.text : context.getString(R.string.widget_empty));
         views.setTextViewText(R.id.widget_toggle, task.completed ? "✓" : "○");
-        views.setTextViewText(R.id.widget_status, task.completed
-                ? context.getString(R.string.widget_completed)
-                : context.getString(R.string.widget_prompt));
         views.setTextColor(R.id.widget_task, context.getColor(task.completed
                 ? R.color.widget_muted
                 : R.color.white));

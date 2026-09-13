@@ -20,7 +20,8 @@
 
         <receiver
             android:name=".OneThingWidget"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/widget_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.junhong.onething.TOGGLE_TASK" />
@@ -31,4 +32,3 @@
         </receiver>
     </application>
 </manifest>
-

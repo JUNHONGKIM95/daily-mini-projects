@@ -8,6 +8,7 @@
     <string name="save_button">오늘의 하나 저장하기</string>
     <string name="complete_label">위젯에서도 완료 체크할 수 있어요</string>
     <string name="completed_label">오늘의 하나를 끝냈어요!</string>
+    <string name="focus_label">한 가지에만 집중해요.</string>
     <string name="empty_task_error">할 일을 입력해주세요.</string>
     <string name="saved_message">위젯에 반영했습니다.</string>
     <string name="character_count">%1$d / 80</string>
@@ -20,5 +21,8 @@
     <string name="widget_prompt">동그라미를 누르면 완료</string>
     <string name="widget_completed">잘했어요. 오늘도 하나 완료!</string>
     <string name="widget_toggle_description">오늘의 할 일 완료 상태 변경</string>
+    <string name="edit_button">수정</string>
+    <string name="recent_label">최근 기록</string>
+    <string name="recent_empty">오늘부터 가볍게 시작해요.</string>
+    <string name="recent_count">최근 7일 동안 %1$d개의 중요한 일을 끝냈어요.</string>
 </resources>
-
