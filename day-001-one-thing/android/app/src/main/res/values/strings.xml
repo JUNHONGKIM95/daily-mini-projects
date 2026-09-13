@@ -18,6 +18,7 @@
     <string name="widget_description">오늘 가장 중요한 할 일을 표시하고 완료 체크합니다.</string>
     <string name="widget_label">오늘은 이것만</string>
     <string name="widget_empty">탭해서 오늘의 하나를 정해주세요</string>
+    <string name="widget_empty_short">오늘의 하나</string>
     <string name="widget_prompt">동그라미를 누르면 완료</string>
     <string name="widget_completed">잘했어요. 오늘도 하나 완료!</string>
     <string name="widget_toggle_description">오늘의 할 일 완료 상태 변경</string>
