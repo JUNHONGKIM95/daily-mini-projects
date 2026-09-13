@@ -25,7 +25,7 @@ h1 em { color: var(--muted); font-weight: 400; }
 .intro { max-width: 520px; margin: 34px 0 0 auto; color: var(--muted); line-height: 1.75; }
 .progress { display: flex; gap: 22px; align-items: center; margin-top: 60px; }
 .progress > div { flex: 1; height: 2px; background: #353932; }
-.progress span { display: block; width: 1%; min-width: 8px; height: 100%; background: var(--lime); }
+.progress span { display: block; width: 2%; min-width: 8px; height: 100%; background: var(--lime); }
 .progress p { margin: 0; color: var(--muted); font: .72rem/1 monospace; }
 .progress strong { color: var(--lime); }
 
@@ -34,6 +34,7 @@ h1 em { color: var(--muted); font-weight: 400; }
 .section-heading .eyebrow { margin-bottom: 10px; }
 h2 { margin: 0; font: 650 clamp(1.8rem, 4vw, 3rem)/1.15 serif; letter-spacing: -.04em; }
 .project-card { overflow: hidden; border: 1px solid #41453d; border-radius: 26px; transition: transform .2s, border-color .2s; }
+.project-card + .project-card { margin-top: 28px; }
 .project-card:hover { transform: translateY(-4px); border-color: var(--lime); }
 .project-card > a { display: grid; grid-template-columns: .95fr 1.05fr; }
 .card-top { grid-column: 1 / -1; padding: 22px 26px; border-bottom: 1px solid #41453d; }
@@ -44,6 +45,11 @@ h2 { margin: 0; font: 650 clamp(1.8rem, 4vw, 3rem)/1.15 serif; letter-spacing: -
 .mini-title { margin-top: 48px; font: 800 3.8rem/.9 serif; letter-spacing: -.07em; }
 .mini-task { display: flex; align-items: center; gap: 12px; margin-top: 48px; padding: 20px; border-radius: 14px; background: #fffdf7; box-shadow: 0 12px 30px #2e372714; font-weight: 700; }
 .mini-task i { width: 22px; height: 22px; border: 2px solid #315c45; border-radius: 50%; }
+.preview--starter { display: flex; flex-direction: column; justify-content: center; color: #f7f0e8; background: #ef4e2f; }
+.mini-start-label { font: 800 .7rem/1 monospace; letter-spacing: .18em; }
+.mini-timer { margin-top: 28px; font: 750 clamp(4.5rem, 9vw, 7rem)/.9 monospace; letter-spacing: -.1em; }
+.mini-start-task { display: flex; align-items: center; gap: 12px; margin-top: 44px; font-weight: 750; }
+.mini-start-task i { width: 12px; height: 12px; border-radius: 50%; background: #20231d; box-shadow: 0 0 0 6px #20231d22; }
 .card-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(36px, 7vw, 78px); }
 .card-copy h3 { margin: 0; font: 700 2.8rem/1 serif; letter-spacing: -.05em; }
 .card-copy p { max-width: 390px; margin: 22px 0; color: var(--muted); line-height: 1.7; }
@@ -61,4 +67,3 @@ footer { min-height: 110px; border-top: 1px solid #343830; color: var(--muted); 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
-

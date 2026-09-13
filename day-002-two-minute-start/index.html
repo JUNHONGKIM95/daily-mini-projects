@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ef4e2f" />
+    <meta name="description" content="미루는 일을 적고 딱 2분만 시작하는 초간단 타이머" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>2분 시동</title>
+  </head>
+  <body data-state="idle">
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="../" aria-label="Daily Mini Projects로 돌아가기">DMP <span>/ 002</span></a>
+        <button class="install-button" id="installButton" type="button" hidden>앱 설치</button>
+      </header>
+
+      <section class="intro" id="introView" aria-labelledby="introTitle">
+        <p class="kicker">JUST TWO MINUTES</p>
+        <h1 id="introTitle">시작만 하면,<br /><em>절반은 끝.</em></h1>
+        <p class="description">계속할 필요는 없어요.<br />미루던 일을 딱 2분만 건드려 보세요.</p>
+
+        <form class="start-form" id="startForm">
+          <label for="taskInput">무엇을 미루고 있나요?</label>
+          <div class="input-wrap">
+            <input id="taskInput" name="task" type="text" maxlength="80" autocomplete="off" placeholder="예: 보고서 파일 열기" required />
+            <button type="submit" aria-label="2분 타이머 시작">시작 <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="hint">완벽하게 말고, 아주 작게 적어보세요.</p>
+        </form>
+      </section>
+
+      <section class="timer-view" id="timerView" aria-labelledby="timerTitle" hidden>
+        <p class="kicker" id="timerLabel">ENGINE RUNNING</p>
+        <h2 id="timerTitle">지금 하고 있는 일</h2>
+        <p class="current-task" id="currentTask"></p>
+
+        <div class="clock" role="timer" aria-live="off" aria-label="남은 시간">
+          <span id="timeDisplay">02:00</span>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="track" cx="60" cy="60" r="54"></circle>
+            <circle class="meter" id="progressRing" cx="60" cy="60" r="54"></circle>
+          </svg>
+        </div>
+
+        <p class="timer-note" id="timerNote">생각하지 말고 손만 움직여요.</p>
+        <button class="quiet-button" id="resetButton" type="button">그만두고 다시 적기</button>
+      </section>
+
+      <section class="done-view" id="doneView" aria-labelledby="doneTitle" hidden>
+        <div class="spark" aria-hidden="true">✦</div>
+        <p class="kicker">IGNITION COMPLETE</p>
+        <h2 id="doneTitle">이미 시작했어요.</h2>
+        <p class="done-task" id="doneTask"></p>
+        <p class="decision">조금 더 이어갈까요?</p>
+        <div class="actions">
+          <button class="primary-button" id="moreButton" type="button">5분 더</button>
+          <button class="secondary-button" id="finishButton" type="button">여기까지</button>
+        </div>
+      </section>
+
+      <footer>
+        <span>DAY 002</span>
+        <span id="startCount">시동 0회</span>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

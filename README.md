@@ -15,6 +15,7 @@
 | Day | 프로젝트 | 해결하는 불편 | 상태 |
 | --- | --- | --- | --- |
 | 001 | [오늘 하나](./day-001-one-thing) · [웹 실행](https://junhongkim95.github.io/daily-mini-projects/day-001-one-thing/) · [Android APK](https://github.com/JUNHONGKIM95/daily-mini-projects/releases/latest) | 해야 할 일이 많아 정작 중요한 한 가지를 놓침 | ✅ 배포 |
+| 002 | [2분 시동](./day-002-two-minute-start) · [웹 실행](https://junhongkim95.github.io/daily-mini-projects/day-002-two-minute-start/) | 시작이 부담스러워 자꾸 일을 미룸 | ✅ 배포 |
 
 전체 주제는 [100가지 프로젝트 아이디어](./IDEAS.md)에서 확인할 수 있습니다.
 
@@ -26,10 +27,10 @@
 
 ## 실행
 
-첫 프로젝트는 빌드 과정이 없는 정적 웹앱입니다.
+각 프로젝트는 빌드 과정이 없는 정적 웹앱입니다.
 
 ```bash
-cd day-001-one-thing
+cd day-002-two-minute-start
 python -m http.server 4173
 ```
 
