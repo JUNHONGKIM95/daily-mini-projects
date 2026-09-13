@@ -24,7 +24,9 @@
 3. **오늘 하나** 위젯을 홈 화면에 추가합니다.
 4. 위젯 오른쪽 동그라미를 눌러 완료 상태를 바꿉니다.
 
-저장소의 GitHub Actions에서 빌드된 디버그 APK를 다운로드할 수도 있습니다.
+[Android APK 다운로드](https://github.com/JUNHONGKIM95/daily-mini-projects/releases/download/day-001-v1.0.0/app-debug.apk)
+
+이 APK는 기능 확인을 위한 디버그 서명 버전입니다. Android에서 처음 설치할 때 다운로드에 사용한 브라우저의 **알 수 없는 앱 설치** 권한을 한 번 허용해야 할 수 있습니다.
 
 ## 실행
 
