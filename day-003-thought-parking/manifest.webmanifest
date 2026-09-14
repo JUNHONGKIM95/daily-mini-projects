@@ -1,0 +1,14 @@
+{
+  "name": "딴생각 주차장",
+  "short_name": "딴생각 주차장",
+  "description": "집중 중 떠오른 생각을 빠르게 보관하는 메모",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#6255d9",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

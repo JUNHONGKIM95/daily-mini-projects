@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#6255d9" />
+    <meta name="description" content="집중 중 떠오른 생각을 한 줄로 빠르게 보관하는 딴생각 주차장" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>딴생각 주차장</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="../" aria-label="Daily Mini Projects로 돌아가기">DMP <span>/ 003</span></a>
+        <button class="install-button" id="installButton" type="button" hidden>앱 설치</button>
+      </header>
+
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="parking-sign" aria-hidden="true">P</div>
+        <div>
+          <p class="eyebrow">THOUGHT PARKING</p>
+          <h1 id="pageTitle">딴생각은<br /><em>여기에.</em></h1>
+        </div>
+        <p class="intro">잊을까 봐 붙잡고 있지 마세요.<br />잠깐 주차하고, 하던 일로 돌아가요.</p>
+      </section>
+
+      <section class="capture" aria-labelledby="captureTitle">
+        <h2 id="captureTitle">방금 무슨 생각이 났나요?</h2>
+        <form id="thoughtForm">
+          <label class="sr-only" for="thoughtInput">주차할 생각</label>
+          <input id="thoughtInput" name="thought" type="text" maxlength="120" autocomplete="off" placeholder="예: 퇴근길에 우유 사기" required />
+          <button type="submit">주차 <span aria-hidden="true">↓</span></button>
+        </form>
+        <p class="shortcut">Enter를 누르면 바로 보관돼요.</p>
+      </section>
+
+      <section class="lot" aria-labelledby="lotTitle">
+        <div class="lot-heading">
+          <h2 id="lotTitle">주차된 생각</h2>
+          <span class="counter" id="thoughtCount">0대</span>
+        </div>
+        <ol class="thought-list" id="thoughtList"></ol>
+        <div class="empty" id="emptyState">
+          <span aria-hidden="true">↳</span>
+          <p>아직 조용하네요.<br />떠오르는 생각은 여기에 맡겨두세요.</p>
+        </div>
+      </section>
+
+      <footer>
+        <span>DAY 003</span>
+        <span>생각은 보관하고 · 집중은 계속하고</span>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">안전하게 주차했어요. 하던 일로 돌아가요.</div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
