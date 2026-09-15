@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">딴생각 주차장</string>
+    <string name="day_label">DMP / 003</string>
+    <string name="eyebrow">THOUGHT PARKING</string>
+    <string name="title">딴생각은\n여기에.</string>
+    <string name="subtitle">잊을까 봐 붙잡고 있지 마세요.\n잠깐 주차하고, 하던 일로 돌아가요.</string>
+    <string name="input_label">방금 무슨 생각이 났나요?</string>
+    <string name="input_hint">예: 퇴근길에 우유 사기</string>
+    <string name="park_button">주차 ↓</string>
+    <string name="notification_hint">추가하면 미정리 생각이 고정 알림에 표시돼요.</string>
+    <string name="list_title">주차된 생각</string>
+    <string name="initial_count">0대</string>
+    <string name="empty_state">↳ 아직 조용하네요.\n떠오르는 생각은 여기에 맡겨두세요.</string>
+    <string name="empty_thought_error">주차할 생각을 적어주세요.</string>
+    <string name="parked_message">안전하게 주차했어요. 하던 일로 돌아가요.</string>
+    <string name="resolve_description">%1$s 정리 완료</string>
+    <plurals name="parked_count">
+        <item quantity="other">%1$d대</item>
+    </plurals>
+    <string name="notification_channel_name">주차된 생각</string>
+    <string name="notification_channel_description">정리하지 않은 생각을 고정 알림으로 표시합니다.</string>
+    <plurals name="notification_title">
+        <item quantity="other">딴생각 %1$d개 주차 중</item>
+    </plurals>
+    <string name="notification_resolve_latest">최근 생각 정리</string>
+</resources>

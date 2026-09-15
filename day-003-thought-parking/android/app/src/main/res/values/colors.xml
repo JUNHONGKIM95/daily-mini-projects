@@ -1,0 +1,11 @@
+<resources>
+    <color name="violet">#6255D9</color>
+    <color name="violet_dark">#302A82</color>
+    <color name="acid">#D8FF73</color>
+    <color name="paper">#F4F0E8</color>
+    <color name="ink">#1B1B19</color>
+    <color name="muted">#716E68</color>
+    <color name="line">#C8C2B8</color>
+    <color name="lavender">#D5D0FF</color>
+    <color name="white">#FFFFFF</color>
+</resources>
